@@ -1,0 +1,182 @@
+:root {
+  --ink: #121416;
+  --ink-lift: #1e2022;
+  --paper: #f5ede0;
+  --paper-dim: rgba(245, 237, 224, 0.72);
+  --copper: #e38547;
+  --copper-deep: #b85c2e;
+  --mute: #9e9588;
+  --rule: rgba(227, 133, 71, 0.35);
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  color: var(--paper);
+  font-family: "Literata", "Iowan Old Style", "Palatino Linotype", Palatino, serif;
+  font-optical-sizing: auto;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  background: var(--ink);
+}
+
+.atmosphere {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(ellipse 70% 50% at 50% 18%, rgba(184, 92, 46, 0.28), transparent 62%),
+    radial-gradient(ellipse 90% 70% at 80% 100%, rgba(18, 20, 22, 0.9), transparent 55%),
+    linear-gradient(180deg, #1a1410 0%, #121416 42%, #0c0d0e 100%);
+}
+
+.atmosphere::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.07;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+.wrap {
+  width: min(40rem, calc(100% - 2.4rem));
+  margin: 0 auto;
+  padding: 2.75rem 0 4.5rem;
+}
+
+.mark {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 2.75rem;
+}
+
+.mark a {
+  font-family: "Fraunces", "Iowan Old Style", serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--copper);
+  text-decoration: none;
+}
+
+.mark span {
+  width: 3.25rem;
+  height: 1px;
+  background: var(--copper);
+}
+
+h1 {
+  font-family: "Fraunces", "Iowan Old Style", serif;
+  font-size: clamp(2.1rem, 6vw, 3.15rem);
+  font-weight: 500;
+  font-variation-settings: "SOFT" 40, "WONK" 1;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.65rem;
+}
+
+.lede {
+  color: var(--mute);
+  font-size: 1rem;
+  margin: 0 0 2.25rem;
+}
+
+h2 {
+  font-family: "Fraunces", serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 2.15rem 0 0.6rem;
+  color: var(--paper);
+}
+
+p, li { color: var(--paper-dim); }
+
+ul {
+  padding-left: 1.15rem;
+  margin: 0.4rem 0 1rem;
+}
+
+li { margin: 0.28rem 0; }
+
+a {
+  color: var(--copper);
+  text-underline-offset: 0.18em;
+}
+
+a:hover { color: var(--paper); }
+
+hr {
+  border: 0;
+  height: 1px;
+  background: var(--rule);
+  margin: 2.4rem 0;
+}
+
+.zh {
+  font-family: "Source Han Serif SC", "Noto Serif SC", "Songti SC", serif;
+  font-size: 0.98rem;
+}
+
+.zh h2 {
+  font-family: inherit;
+  font-size: 1.15rem;
+}
+
+.foot {
+  margin-top: 3rem;
+  color: var(--mute);
+  font-size: 0.88rem;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  padding: 12vh 0 4.5rem;
+}
+
+.hero h1 { margin-bottom: 0.85rem; }
+
+.hero p {
+  max-width: 28rem;
+  margin: 0 0 1.75rem;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+}
+
+.links a {
+  font-family: "Fraunces", serif;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 0.12rem;
+}
+
+.links a:hover { border-bottom-color: var(--copper); }
+
+.support {
+  margin-top: 2.75rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--rule);
+  max-width: 32rem;
+}
+
+.support h2 { margin-top: 0; }
+
+.mail {
+  font-family: "Fraunces", serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-decoration: none;
+}
